@@ -25,8 +25,9 @@ The interpretation stage will change the meaning of the message through a basic 
 ### Example requests
 
 Initial message from initiator (me):
+
+POST /whisper
 ```json
-POST https://yourserviceurl.com/whisper
 {
     gameId: 1,
     message: "Some message for you",
@@ -64,8 +65,9 @@ nextWhisperRecipientId (int) - the id of the recipient you need to pass the mess
 whisperReceipients (array) - a collection of recipients, showing the full chain/list of players
 
 Message from last recipient:
+
+POST /whisper
 ```json
-POST https://yourserviceurl.com/whisper
 {
     gameId: 1,
     message: "Some message for you",
@@ -93,8 +95,9 @@ POST https://yourserviceurl.com/whisper
 ```
 
 List all games initiated on your service:
+
+GET /games
 ```json
-GET https://yourserviceurl.com/games
 {
     games: [
         {
