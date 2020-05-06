@@ -1,7 +1,7 @@
-# Chinese Whispers Kata
+# Grapevine Coding Challenge
 
 ## Intro
-The game of Chinese Whispers is something that many of us will have played in the playground.  The idea being that one person comes up with a message and whispers it into someones ear.  The recipient of the message then says what they think they heard and passes the message on to the next person in the sequence until everyone has heard the message.  The message in its final form is then shared with the group along with the original message.  Normally these messages are very different!
+The Grapevine Game (aka Chinese Whispers) is something that many of us will have played in the playground.  The idea being that one person comes up with a message and whispers it into someones ear.  The recipient of the message then says what they think they heard and passes the message on to the next person in the sequence until everyone has heard the message.  The message in its final form is then shared with the group along with the original message.  Normally these messages are very different!
 
 ## The task
 
