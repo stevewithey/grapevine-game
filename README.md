@@ -153,6 +153,6 @@ Once all players have their service up, I will initiate some games and assess pe
 - Hacker
 - Hacker's Dream
 - Gold-Plated Potato
-- Wooden Spoon
+- It's the taking part that counts
 
 You may be asked to present your solution to the other participants.
