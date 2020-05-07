@@ -143,7 +143,9 @@ You could alternatively sign up for a free account on https://www.wordsapi.com/ 
 
 You will have 2 weeks to get things going.  We can revise the timeline if people think they need more time.
 
-You'll need to submit your code to me (ideally a github repo/fork of this repo) along with the url for your application.
+You'll need to submit your code to me (ideally a github branch/fork of this repo) along with the url for your application.
+
+Please do not touch the Grapevine.GameRunner project. That is what I will be working on to test the game.
 
 Once all players have their service up, I will initiate some games and assess people's solutions.  Shout-outs will be for the following categories:
 
@@ -152,4 +154,4 @@ Once all players have their service up, I will initiate some games and assess pe
 - Gold-Plated Potato
 - Wooden Spoon
 
-You may be asked to present your solution to the other participants
+You may be asked to present your solution to the other participants.
