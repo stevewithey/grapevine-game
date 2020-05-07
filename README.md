@@ -61,13 +61,14 @@ gameId (int) - The id of the game currently being played
 
 message (string) - The message passed from the previous sender
 
-sentFromId - if this is -1, then it has been sent from the game initiator, if it matches the last id in the recipients list, then you should not pass this message on again as it's the final message.
+sentFromId - if this is -1, then it has been sent from the game initiator, if it matches the last id in the recipients list, then you should not pass this message on again as it's the final message and the game is over
 
-nextWhisperRecipientId (int) - the id of the recipient you need to pass the message on to.  If the value is 1, then you are the last sender, so 
+nextWhisperRecipientId (int) - the id of the recipient you need to pass the message on to.  If the value is 0, then you are the last sender, so pass the interpretted message back to the first player in the sequence
 
 whisperReceipients (array) - a collection of recipients, showing the full chain/list of players
 
-Message from last recipient:
+
+Message from last recipient (id 3) back to first player (id 0) to end the game:
 
 POST /whisper
 ```json
