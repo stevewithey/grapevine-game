@@ -25,9 +25,9 @@ The interpretation stage will change the meaning of the message through a basic 
 - The order of recipients will be randomised before a game is played, so you may not always be the same recipient in the sequence.
 
 
-### Example requests
+## Example requests
 
-Initial message from initiator (me):
+### Initial message from initiator (me):
 
 POST /whisper
 ```json
@@ -63,12 +63,41 @@ message (string) - The message passed from the previous sender
 
 sentFromId - if this is -1, then it has been sent from the game initiator, if it matches the last id in the recipients list, then you should not pass this message on again as it's the final message and the game is over
 
-nextWhisperRecipientId (int) - the id of the recipient you need to pass the message on to.  If the value is 0, then you are the last sender, so pass the interpretted message back to the first player in the sequence
+nextWhisperRecipientId (int) - the id of the recipient you need to pass the message on to.  This should be incremented from the value you received, however if you are the penultimate service, you need to tell the next service to pass the interpretted message back to the first player in the sequence (set it to 0).  See examples below
 
 whisperReceipients (array) - a collection of recipients, showing the full chain/list of players
 
+## Message from penultimate recipient (id 2) to next player (id 3):
 
-Message from last recipient (id 3) back to first player (id 0) to end the game:
+POST /whisper
+```json
+{
+    gameId: 1,
+    message: "Some message for you",
+    sentFromId: 2,
+    nextWhisperRecipientId: 0, // NOTE it's telling service to pass back to first player here
+    whisperRecipients: [
+        {
+            id: 0,
+            url: "https://someurl.com/whisper"
+        },
+        {
+            id: 1,
+            url: "https://someurl2.com/whisper"
+        },
+        {
+            id: 2,
+            url: "https://someurl3.com/whisper"
+        },
+        {
+            id: 3,
+            url: "https://someurl4.com/whisper"
+        }
+    ]
+}
+```
+
+### Message from last recipient (id 3) back to first player (id 0) to end the game:
 
 POST /whisper
 ```json
