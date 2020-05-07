@@ -22,6 +22,7 @@ The interpretation stage will change the meaning of the message through a basic 
 - You can see all games that have been kicked off by your service from the GET /games endpoint
 - Get specific game initiated on your service (return 404 if game doesn't exist) from the GET /game/{gameId} endpoint
 - If you are the only recipient in the list, the game should still function as described
+- The order of recipients will be randomised before a game is played, so you may not always be the same recipient in the sequence.
 
 
 ### Example requests
