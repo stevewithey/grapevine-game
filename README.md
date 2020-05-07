@@ -20,7 +20,9 @@ The interpretation stage will change the meaning of the message through a basic 
 - If sentFromId is -1, then you are the first recipient.
 - The state of a game is logged by the first recipient.
 - You can see all games that have been kicked off by your service from the GET /games endpoint
+- Get specific game initiated on your service (return 404 if game doesn't exist) from the GET /game/{gameId} endpoint
 - If you are the only recipient in the list, the game should still function as described
+
 
 ### Example requests
 
@@ -32,24 +34,24 @@ POST /whisper
     gameId: 1,
     message: "Some message for you",
     sentFromId: -1,
-    nextWhisperRecipientId: 2,
+    nextWhisperRecipientId: 1,
     whisperRecipients: [
         {
-            id: 1,
-            whisperUrl: "https://someurl.com/whisper"
+            id: 0,
+            url: "https://someurl.com/whisper"
         },
         {
-            id: 2,
+            id: 1,
             url: "https://someurl2.com/whisper"
         },
         {
-            id: 3,
+            id: 2,
             url: "https://someurl3.com/whisper"
         },
         {
-            id: 4,
+            id: 3,
             url: "https://someurl4.com/whisper"
-        },
+        }
     ]
 }
 ```
@@ -71,25 +73,25 @@ POST /whisper
 {
     gameId: 1,
     message: "Some message for you",
-    sentFromId: 4,
-    nextWhisperRecipientId: 2,
+    sentFromId: 3,
+    nextWhisperRecipientId: 1,
     whisperRecipients: [
         {
-            id: 1,
-            whisperUrl: "https://someurl.com/whisper"
+            id: 0,
+            url: "https://someurl.com/whisper"
         },
         {
-            id: 2,
+            id: 1,
             url: "https://someurl2.com/whisper"
         },
         {
-            id: 3,
+            id: 2,
             url: "https://someurl3.com/whisper"
         },
         {
-            id: 4,
+            id: 3,
             url: "https://someurl4.com/whisper"
-        },
+        }
     ]
 }
 ```
@@ -118,6 +120,18 @@ GET /games
 }
 ```
 
+Get specific game initiated on your service (return 404 if game doesn't exist):
+
+GET /game/1
+```json
+{
+    gameId: 1,
+    gameStarted: "2020-05-06T09:00:00Z",
+    gameEnded: "2020-05-06T09:01:00Z",
+    startingMessage: "I would love a cup of tea right now!",
+    endMessage: "Hi love a cup of wee tight pal!"
+}
+```
 
 ## Resources
 
@@ -129,7 +143,7 @@ You could alternatively sign up for a free account on https://www.wordsapi.com/ 
 
 You will have 2 weeks to get things going.  We can revise the timeline if people think they need more time.
 
-You'll need to submit your code to me (ideally a github repo/fork of this repo)
+You'll need to submit your code to me (ideally a github repo/fork of this repo) along with the url for your application.
 
 Once all players have their service up, I will initiate some games and assess people's solutions.  Shout-outs will be for the following categories:
 
@@ -138,4 +152,4 @@ Once all players have their service up, I will initiate some games and assess pe
 - Gold-Plated Potato
 - Wooden Spoon
 
-You may be asked to share your solution
+You may be asked to present your solution to the other participants
