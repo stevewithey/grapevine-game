@@ -30,7 +30,7 @@ The interpretation stage will change the meaning of the message through a basic 
 ### Initial message from initiator (me):
 
 POST /whisper
-```json
+```yaml
 {
     gameId: 1,
     message: "Some message for you",
@@ -70,7 +70,7 @@ whisperReceipients (array) - a collection of recipients, showing the full chain/
 ## Message from penultimate recipient (id 2) to next player (id 3):
 
 POST /whisper
-```json
+```yaml
 {
     gameId: 1,
     message: "Some message for you",
@@ -100,7 +100,7 @@ POST /whisper
 ### Message from last recipient (id 3) back to first player (id 0) to end the game:
 
 POST /whisper
-```json
+```yaml
 {
     gameId: 1,
     message: "Some message for you",
@@ -130,7 +130,7 @@ POST /whisper
 List all games initiated on your service:
 
 GET /games
-```json
+```yaml
 {
     games: [
         {
@@ -154,7 +154,7 @@ GET /games
 Get specific game initiated on your service (return 404 if game doesn't exist):
 
 GET /game/1
-```json
+```yaml
 {
     gameId: 1,
     gameStarted: "2020-05-06T09:00:00Z",
